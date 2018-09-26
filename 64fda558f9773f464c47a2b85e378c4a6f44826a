@@ -1,0 +1,8 @@
+Code-Review+2: Bart Wensley <barton.wensley@windriver.com>
+Workflow+1: Bart Wensley <barton.wensley@windriver.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 26 Sep 2018 13:48:51 +0000
+Reviewed-on: https://review.openstack.org/605305
+Project: openstack/stx-distcloud-client
+Branch: refs/heads/master
