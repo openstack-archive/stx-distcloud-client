@@ -98,13 +98,13 @@ class BashCompletionCommand(command.Command):
         commands = set()
         options = set()
 
-        for option, _action in self.app.parser._option_string_actions.items():
+        for option, _action in list(self.app.parser._option_string_actions.items()):
             options.add(option)
 
         for command_name, _cmd in self.app.command_manager:
             commands.add(command_name)
 
-        print(' '.join(commands | options))
+        print((' '.join(commands | options)))
 
 
 class DCManagerShell(app.App):
@@ -452,14 +452,14 @@ class DCManagerShell(app.App):
         self.client_manager = ClientManager()
 
     def _set_shell_commands(self, cmds_dict):
-        for k, v in cmds_dict.items():
+        for k, v in list(cmds_dict.items()):
             self.command_manager.add_command(k, v)
 
     def _clear_shell_commands(self):
         exclude_cmds = ['help', 'complete']
 
         cmds = self.command_manager.commands.copy()
-        for k, v in cmds.items():
+        for k, v in list(cmds.items()):
             if k not in exclude_cmds:
                 self.command_manager.commands.pop(k)
 

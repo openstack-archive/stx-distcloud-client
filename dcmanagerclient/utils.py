@@ -38,7 +38,7 @@ def do_action_on_many(action, resources, success_msg, error_msg):
     for resource in resources:
         try:
             action(resource)
-            print(success_msg % resource)
+            print((success_msg % resource))
         except Exception as e:
             failure_flag = True
             print(e)

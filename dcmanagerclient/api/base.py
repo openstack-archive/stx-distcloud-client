@@ -75,7 +75,7 @@ class ResourceManager(object):
         json_objects = [json_response_key[item] for item in json_response_key]
         resource = []
         for json_object in json_objects:
-            data = json_object.get('usage').keys()
+            data = list(json_object.get('usage').keys())
             for values in data:
                 resource.append(self.resource_class(self, values,
                                 json_object['limits'][values],
