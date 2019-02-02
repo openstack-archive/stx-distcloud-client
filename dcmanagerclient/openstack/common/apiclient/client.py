@@ -363,7 +363,7 @@ class BaseClient(object):
                     "Must be one of: %(version_map)s") % \
                   {'api_name': api_name,
                    'version': version,
-                   'version_map': ', '.join(version_map.keys())
+                   'version_map': ', '.join(list(version_map.keys()))
                    }
             raise exceptions.UnsupportedVersion(msg)
 

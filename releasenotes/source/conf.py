@@ -194,8 +194,8 @@ latex_documents = [
     (
         'index',
         'stx-distcloud-clientreleasenotes.tex',
-        u'stx-distcloud-client Release Notes',
-        u'StarlingX',
+        'stx-distcloud-client Release Notes',
+        'StarlingX',
         'manual',
     ),
 ]
@@ -229,8 +229,8 @@ man_pages = [
     (
         'index',
         'stx-distcloud-clientreleasenotes',
-        u'stx-distcloud-client Release Notes',
-        [u'StarlingX'],
+        'stx-distcloud-client Release Notes',
+        ['StarlingX'],
         1,
     )
 ]
@@ -248,8 +248,8 @@ texinfo_documents = [
     (
         'index',
         'stx-distcloud-clientReleaseNotes',
-        u'stx-distcloud-client Release Notes',
-        u'StarlingX',
+        'stx-distcloud-client Release Notes',
+        'StarlingX',
         'stx-distcloud-clientreleasenotes',
         'StarlingX Distributed Cloud Client',
         'Miscellaneous',

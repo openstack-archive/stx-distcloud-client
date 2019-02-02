@@ -197,7 +197,7 @@ def install(domain, lazy=False):
         else:
             gettext.install(domain,
                             localedir=os.environ.get(localedir),
-                            unicode=True)
+                            str=True)
 
 
 class Message(six.text_type):
@@ -308,9 +308,9 @@ class Message(six.text_type):
             # Copy each item in case one does not support deep copy.
             params = {}
             if isinstance(self.params, dict):
-                for key, val in self.params.items():
+                for key, val in list(self.params.items()):
                     params[key] = self._copy_param(val)
-            for key, val in other.items():
+            for key, val in list(other.items()):
                 params[key] = self._copy_param(val)
         else:
             params = self._copy_param(other)
