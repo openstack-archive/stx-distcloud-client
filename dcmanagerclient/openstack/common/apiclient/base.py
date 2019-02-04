@@ -244,7 +244,7 @@ class ManagerWithFind(BaseManager):
         the Python side.
         """
         found = []
-        searches = kwargs.items()
+        searches = list(kwargs.items())
 
         for obj in self.list():
             try:
@@ -409,7 +409,7 @@ class Extension(HookableMixin):
 
     def _parse_extension_module(self):
         self.manager_class = None
-        for attr_name, attr_value in self.module.__dict__.items():
+        for attr_name, attr_value in list(self.module.__dict__.items()):
             if attr_name in self.SUPPORTED_HOOKS:
                 self.add_hook(attr_name, attr_value)
             else:
@@ -446,7 +446,7 @@ class Resource(object):
 
     def __repr__(self):
         reprkeys = sorted(k
-                          for k in self.__dict__.keys()
+                          for k in list(self.__dict__.keys())
                           if k[0] != '_' and k != 'manager')
         info = ", ".join("%s=%s" % (k, getattr(self, k)) for k in reprkeys)
         return "<%s %s>" % (self.__class__.__name__, info)
